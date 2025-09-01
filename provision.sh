@@ -9,7 +9,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # SOURCES
 
 source "src/logger.sh"
-source "$DIR/apps/_installer.sh"
+source "$DIR/apps/_all.sh"
 
 [ -f "$DIR/conf.sh" ] && source "$DIR/conf.sh"
 
@@ -17,18 +17,18 @@ source "$DIR/apps/_installer.sh"
 # HELPERS
 
 log_header () {
-  info "development" "---- Starting <<DOCKER>> provisioning... ----"
+  info "docker" "Starting _docker_ provisioning..."
 }
 
 log_footer () {
-  info "development" "---- ...<<DOCKER>> provisioning complete. ----"
+  info "docker" "..._docker_ provisioning complete."
 }
 
 
 # INTERFACE
 
 provision () {
-  docker_is_provisioned
+  provision_all_docker_apps
 }
 
 
