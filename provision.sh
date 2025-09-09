@@ -11,8 +11,6 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "src/logger.sh"
 source "$DIR/apps/_all.sh"
 
-[ -f "$DIR/conf.sh" ] && source "$DIR/conf.sh"
-
 
 # HELPERS
 
