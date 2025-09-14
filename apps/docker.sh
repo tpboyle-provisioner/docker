@@ -3,7 +3,7 @@
 
 # SOURCE
 
-source "src/packages/apt.sh"
+source "src/packages/apt/_all.sh"
 source "src/services.sh"
 
 
