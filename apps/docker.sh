@@ -3,7 +3,10 @@
 
 # SOURCE
 
-source "src/packages/apt/_all.sh"
+source "src/packages/apt/sources.sh"
+source "src/packages/apt/keyrings.sh"
+source "src/packages/apt/repositories.sh"
+source "src/packages/apt/packages.sh"
 source "src/services.sh"
 
 
@@ -20,7 +23,7 @@ ensure_docker_is_provisioned () {
   apt_ensure_key_is_installed docker "$APT_KEY_URL"
   apt_ensure_sources_file_exists docker "$APT_REPO_URL"
   ensure_docker_packages_are_installed
-  ensure_service_is_active docker
+  # ensure_service_is_active docker
 }
 
 

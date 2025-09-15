@@ -3,13 +3,13 @@
 
 # LOCATE PROJECT ROOT
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOCKER_MODULE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 
 # SOURCES
 
 source "src/logger.sh"
-source "$DIR/apps/_all.sh"
+source "$DOCKER_MODULE_DIR/apps/_all.sh"
 
 
 # HELPERS
