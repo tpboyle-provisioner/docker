@@ -23,6 +23,7 @@ ensure_docker_is_provisioned () {
   apt_ensure_key_is_installed docker "$APT_KEY_URL"
   apt_ensure_sources_file_exists docker "$APT_REPO_URL"
   ensure_docker_packages_are_installed
+  ensure_user_is_in_docker_group
   # ensure_service_is_active docker
 }
 
@@ -45,3 +46,8 @@ ensure_docker_packages_are_installed () {
     docker-buildx-plugin \
     docker-compose-plugin
 }
+
+ensure_user_is_in_docker_group () {
+  sudo usermod -aG docker $USER
+}
+
